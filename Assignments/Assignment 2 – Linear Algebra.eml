@@ -1,0 +1,479 @@
+Delivered-To: bsef23m014@pucit.edu.pk
+Received: by 2002:a05:6f02:424:b0:117:8496:d845 with SMTP id 36csp422087rci;
+        Thu, 26 Feb 2026 00:05:05 -0800 (PST)
+X-Forwarded-Encrypted: i=5; AJvYcCW6c4eFDWHeysuk1NF5aZQI6QDMvOXWJwPOTPrwgNDloMLFvnorHnFljUqwcFeaAYsV4nkWjjjTIUKX@pucit.edu.pk
+X-Received: by 2002:a05:6870:d36d:b0:3e7:e420:6229 with SMTP id 586e51a60fabf-4157abca60cmr10303280fac.6.1772093105251;
+        Thu, 26 Feb 2026 00:05:05 -0800 (PST)
+ARC-Seal: i=4; a=rsa-sha256; t=1772093105; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=cK18Qq+SBixGvG6Jn/zl/enSIMOz2Urj+yHOIugVvHStSozMRFfTqphlC8DYkD6I0v
+         O7Z0JeqIl7Ct+u6IX2/8qZuRsQWhrLHUNnoxD+TfsFSft3PRaoHb3naYlHDRJ+qEnQ5C
+         fpVEiFhx0G66uo5vtmg/u/sHrzzAU+g98BWjUGPTtrlzc026LEsX/XO112jrzTZXnFgL
+         QLpBOpLJoSvSUQFz7yngP+pfbGqjf4DIHCp+K8qSbVezPnDLJF5oJO/srm1jFnfUXqCe
+         PZJ3OD4IA65ggm/T3ldbkKSGIFOW6Tiv9kqtMb1TSYlrsGnTLoLi4qjwRIQZa8SfulKd
+         9GNQ==
+ARC-Message-Signature: i=4; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=se088UX/VNSG5LqudHfmtDUBYL9+pBSMCJ3EMM4llnM=;
+        fh=OMHOEvJZ2MA5Lky91svfsJkdhy8rVowNWIprxihkStQ=;
+        b=YxVkXHoNQGmtxgs7Ea+8SZKCBBWmhbSOhaPKJKAJ62uSZ9JfY5TtrzKRXNgkh6hHOu
+         0j+aF+Y477z/gu9DUH2R5mLEZ06FFW+YmJWPqWRbGWUS5XCcHSqRHGOol4/tT27SeeLc
+         IRceYtP7k1tzpDH7HI7vXhFdzOZeVvLBjCLzR5npSBU95tDmVqAGg8yOkljeqBqJpAij
+         Cs+WGAfmS5zDNe/fCSEzqanEMv7wrKVznG6aEYno/WWP3hwF9macvrmyqWk3+gm5YdII
+         2iSr1rvchTprkw+v8/xCqq4Csj1nzkAa0rnyOVTvEPfX9eyF75yK2HQWapQjtrwur/Im
+         jUzA==;
+        dara=google.com
+ARC-Authentication-Results: i=4; mx.google.com;
+       dkim=pass header.i=@pucit-edu-pk.20230601.gappssmtp.com header.s=20230601 header.b="f7H/eVRV";
+       arc=pass (i=3 spf=pass spfdomain=pucit.edu.pk dkim=pass dkdomain=pucit-edu-pk.20230601.gappssmtp.com);
+       spf=pass (google.com: domain of bssef23ma+bncbcklvwww34orbmh577gamgqexkawria@pucit.edu.pk designates 209.85.220.69 as permitted sender) smtp.mailfrom=bssef23ma+bncBCKLVWWW34ORBMH577GAMGQEXKAWRIA@pucit.edu.pk;
+       dara=neutral header.i=@pucit.edu.pk
+Return-Path: <bssef23ma+bncBCKLVWWW34ORBMH577GAMGQEXKAWRIA@pucit.edu.pk>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 586e51a60fabf-4160d2f3167sor544775fac.13.2026.02.26.00.05.05
+        for <bsef23m014@pucit.edu.pk>
+        (Google Transport Security);
+        Thu, 26 Feb 2026 00:05:05 -0800 (PST)
+Received-SPF: pass (google.com: domain of bssef23ma+bncbcklvwww34orbmh577gamgqexkawria@pucit.edu.pk designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@pucit-edu-pk.20230601.gappssmtp.com header.s=20230601 header.b="f7H/eVRV";
+       arc=pass (i=3 spf=pass spfdomain=pucit.edu.pk dkim=pass dkdomain=pucit-edu-pk.20230601.gappssmtp.com);
+       spf=pass (google.com: domain of bssef23ma+bncbcklvwww34orbmh577gamgqexkawria@pucit.edu.pk designates 209.85.220.69 as permitted sender) smtp.mailfrom=bssef23ma+bncBCKLVWWW34ORBMH577GAMGQEXKAWRIA@pucit.edu.pk;
+       dara=neutral header.i=@pucit.edu.pk
+ARC-Seal: i=3; a=rsa-sha256; t=1772093105; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=czQ49YOFFghYABNEy9hm+RJWzKW2UYCvrB11ADlCjvKSf0K/T4G9JGknJcMp39M8pV
+         elSSODgNnExicM4lTIXRcg4Fb2lwbNj89er7wjd5gyVVD1TIZ9pN5K9nk4FBiSykWZWu
+         MJYMymsmxLCUR5udr9ETtg0RGxZSEcZxxDBOhJg1/ImMF684lIxMmgIZdNLpojeK7hLF
+         uRhYB8yCYkrVnv1abVcXxBbq6B9QM0jqtQOHWgZg3bj6cIjGpstSru8okZjL/IshePox
+         qFSCXi4O/Ca7G8FDRUve34aHmVmpW8JLy4IsGcc2jkLTi3Xpg9HE5SluFTVnTiXH4AOL
+         F5HA==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=se088UX/VNSG5LqudHfmtDUBYL9+pBSMCJ3EMM4llnM=;
+        fh=OMHOEvJZ2MA5Lky91svfsJkdhy8rVowNWIprxihkStQ=;
+        b=HM07463Cm8fqVnmmFjIq7SwoML+xx4TX5c/tq4kP5kR2VbgPI5lGr+E3tbrc5ZSJtF
+         ksYXKrLkhkkAZvFeAWtQJkLFKB1PZtF+Kg7B27+b/eNPTcPdoDbqFFPuWr4fmerAbgnZ
+         p4Fi5UdUvUXfukjvwCKVBaf+t8KIxgQgfU3lNer4LF1eOnbbpu29NPzrT158h9HbY0y0
+         gX4PdoCN/nVIHLDQgq3X2WaxKzRebXfMD6BgHeeaSlzhByd+C+x4K7yCZ/545tMFziVM
+         COIO6MQKxa8Uk1JaT04lYvZVrlIK00YuX2TNqeKGgW9GfRyCUl2VhwmSX3YF9HgpYpIo
+         n9bg==;
+        darn=pucit.edu.pk
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@pucit-edu-pk.20230601.gappssmtp.com header.s=20230601 header.b=NhqkMAvo;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of zia@pucit.edu.pk designates 209.85.220.41 as permitted sender) smtp.mailfrom=zia@pucit.edu.pk;
+       dara=neutral header.i=@pucit.edu.pk
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=pucit-edu-pk.20230601.gappssmtp.com; s=20230601; t=1772093104; x=1772697904; darn=pucit.edu.pk;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:to:subject:message-id:date:from:mime-version:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=se088UX/VNSG5LqudHfmtDUBYL9+pBSMCJ3EMM4llnM=;
+        b=f7H/eVRVdMTCN9sV/Usx1HTm5CXrpNiOz8GiQ/HEoxwyNK+FprKnDPz4uvnLTnnBQU
+         AU+bC0/qDDMhRb9Gwde8BJfN05NwE2ckZiVcLnhj5S+aTo0Ui95C42Zl1TaQ+fC+t4tF
+         /GzpE0KOhiy7bBukdW/OhXTm9qzHwH/mJTEOdTeW8Urz+IEIyTjBKncNXO1nfeJRV3sE
+         mzU7B2AoHuAo9a8XuUX5le6Sh03kk+PQwlYAfRvVL9gxxTzAU5qhm8s0L8aM272AnWZN
+         uZ7+zmJP487DsCO8uHe0UKQQSIycE5SLDogrUqGLsuKb44U13F27wWsyZlI95D8o/efK
+         IrTg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772093105; x=1772697905;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:to:subject:message-id:date:from:mime-version
+         :x-gm-gg:x-beenthere:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=se088UX/VNSG5LqudHfmtDUBYL9+pBSMCJ3EMM4llnM=;
+        b=dILSqt4uK73PC8guodH/WYpYk+FXQWTA0iqP7vzn3SFkR8DMAT6IzaAgG1sjzV1KOg
+         naC/h+5e5kwkbdB0KEo4XNiNzMAs9ZGojVZXCpZe8C+1neBVNSO/J7VQZ6ygvj32/UKO
+         Q+It36auqwPwJVIUEHXF2IHDSEY/MRKNGEawVXLaT/Lrmp7/7KcYdOXwfj7VoVMRHFNU
+         3g1tQjJJlB83818eTA5vanjeQi8cBJOrJ3G9lP74gphdZ8p/FxAlMr+iiN+/mKKB+Y20
+         EIxJoTiQjQvHhLdT3Knv5XHlQcEJbUM6TTB43gWZ07EjcXAXoGzGeSvlim/Vs53SG/k5
+         gtsg==
+X-Forwarded-Encrypted: i=3; AJvYcCVOjTFDW/SCpWVOmkymEXIBH/x8k2ORU2PJCfNYD5NvLoDz7EmxOFBd2adm2dggMjaGtNfZWMTVRvPq@pucit.edu.pk
+X-Gm-Message-State: AOJu0Yyuf64A+6Z36Ak4LkazBRwQzpioTu76qQJGh+FrHeYdYD/LnV6I
+	RF/ekMdZZyiJp4sUaME9eH0+1OeiTP/fCf4t80LOFcehlWsiRGDSK4RJtmNG8IKvyKNGtQ==
+X-Received: by 2002:a05:6870:8455:b0:321:2772:dd9 with SMTP id 586e51a60fabf-4157ac29eb2mr7897578fac.12.1772093104440;
+        Thu, 26 Feb 2026 00:05:04 -0800 (PST)
+X-BeenThere: bssef23ma@pucit.edu.pk; h="AV1CL+GhmgeRM77fT2kP7hdIJq8oJAnW0vZymK+8ccsfjudxEg=="
+Received: by 2002:a05:6870:4410:b0:40e:f703:9195 with SMTP id
+ 586e51a60fabf-415ede6e3eals873188fac.0.-pod-prod-01-us; Thu, 26 Feb 2026
+ 00:05:04 -0800 (PST)
+X-Received: by 2002:a05:6808:c238:b0:45e:e050:109e with SMTP id 5614622812f47-4644612e738mr10437094b6e.4.1772093103981;
+        Thu, 26 Feb 2026 00:05:03 -0800 (PST)
+Received: by 2002:aa7:c9d1:0:b0:65f:7f96:349f with SMTP id 4fb4d7f45d1cf-65f82269e21msa12;
+        Thu, 26 Feb 2026 00:01:07 -0800 (PST)
+X-Received: by 2002:a17:907:a45:b0:b87:115c:4a30 with SMTP id a640c23a62f3a-b9351509a4emr223587066b.16.1772092865358;
+        Thu, 26 Feb 2026 00:01:05 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1772092865; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=HNjQyp3t1VrS/3O2VlMl67QNQgTHqX5YxbJauubIN4Pnb/SCwPCHkhNnDmT8WEvLQO
+         5pWpU0zEr59Rg+mQIUDkqKaUTc0+07jTUNVL6rmaaEkgCxWuvBLKoJFym+BtHYD9GGi8
+         EGVpKL9dUNDxT4AxcfMfGN/vjcSHs99vEK5/1rzwsQuUF4lQVX2wRti0mGGeY2N2GG0J
+         6om6T9WBcUxh5tHCrSqcGWWCHAJ9vXwEE1dsRxR8Ga5mPpq98i1O3IZzbsbjEIYeE52l
+         j3+qK27nlpr6rKyzPp16YomSsd+vB/GupuRS0HDoDvy+1mFlm5s6dXBJY2B0JRCj004k
+         OSvQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=se088UX/VNSG5LqudHfmtDUBYL9+pBSMCJ3EMM4llnM=;
+        fh=tzFy0jtPAQWZTGr3ZoWNcNaYVULJ7W76pQQlgIwMFkQ=;
+        b=Wt3wySMYhVGnAVXieefZz5nZHl/QndbPv8Mdb+zjwxyMcQYmaLxATmPJgmREPnuq8s
+         qQUNXLnq7LVSDFL+XM3dg+HzUiJCA4f5YZ1Bp84PrqFkNAZzUrEXrZn5jo9yaE15C5eD
+         cFngiIEvI7XKeh+FR0XTIt+LwU3F0HpHDYmKFjtKwfu5Gm+Lyek9YlNUN8ER5/fOTylW
+         q2MKzaa/ennyJRC1dXhTohKLPrn6jikUz43k/nARuP6poKTWwarw1EX2fFqkPNXJOeQa
+         3P+kT2kSg9JQ9JhzXSV3LOWOpaLUk8xVmA5uUyZb2xcpotKmVmSwzwRV3xBHdsCzZcCL
+         BsQw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@pucit-edu-pk.20230601.gappssmtp.com header.s=20230601 header.b=NhqkMAvo;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of zia@pucit.edu.pk designates 209.85.220.41 as permitted sender) smtp.mailfrom=zia@pucit.edu.pk;
+       dara=neutral header.i=@pucit.edu.pk
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-b935acf65d4sor30158366b.14.2026.02.26.00.01.04
+        for <bssef23ma@pucit.edu.pk>
+        (Google Transport Security);
+        Thu, 26 Feb 2026 00:01:04 -0800 (PST)
+Received-SPF: pass (google.com: domain of zia@pucit.edu.pk designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+ARC-Seal: i=1; a=rsa-sha256; t=1772092863; cv=none;
+        d=google.com; s=arc-20240605;
+        b=SECk+L3CzKiP/eVYB2gAUIiECW5pbY9JKgPvu8oWbK1YMgtq537V0bHYh7jmFsa35b
+         YAL/5+QzK8x78nWFXSVYnYlIm0PitNsWOLRmQTt/Ak6Eo/PAL7Rk1Cqs3scbamwDluKM
+         IZp6/JY3wDpBX+ehxVY6lbq4aKCkWYK21U61A9UZnZcuqr9Tjv6gAeo1neolNKmhHjOY
+         s9736Z8R6JRARxonX66DU4WkgSn1Ji775cYnFaoeQA34usOxhUjdf4k+WRZi9Vb9x0WR
+         cVLo0juFpS8CjjxpqI+Kdk3quJvfP3I7U/Sg1PXsmo4LwnWplBY95ydPuVCQeFl1s0fJ
+         v3QQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=se088UX/VNSG5LqudHfmtDUBYL9+pBSMCJ3EMM4llnM=;
+        fh=tzFy0jtPAQWZTGr3ZoWNcNaYVULJ7W76pQQlgIwMFkQ=;
+        b=UB01zKGYatZ+s5V3CEH2CvAGjEC8nHFbUf6WCPoxtAHKLcVDB2l46C8/+jpCLJCxLs
+         jVr8LZ4KduGYeTJx3+Taq3DyqAHqtxLK5Wg5oaDCHZ/kdnyoiAMGuIzTaLYcIFbJiCWf
+         7uG9BpYMcSWBKip4A6VX24VVoadvtW/BArUmFStmiMxH2/lEMqZqjuO5e5RqwVtGyK37
+         8NiZMZNjiw3L/y2PEpNhjuxfCD+0xQiPf3mh0/6wxjAXXywymQkq2LJVFPoaiDRA/Xad
+         a58Cim1M8sm0Jwrspds5tNBodwhsUOUJsjnAnKEI50OB+QCkKENDgVsWbNZgiGtjrFTB
+         dmNQ==;
+        darn=pucit.edu.pk
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+X-Gm-Gg: ATEYQzy9MNzyMWDO9gHPc2J+uAYgM9It1E/txPL/ZWhmmx3M/qq2G5hNHwYRgf96U5F
+	wUUzycoL76PCMMf/du4t4PCEn5GzjqBYdFjUEYpmvGboMuU/h+sLqfWOm4/w6Tu6DPpJ12jgID1
+	T79FfM7oFwn/pSAqKfQv39ZyZ9Q1puz9VKXVSxoW5n4qk3gltdToC/kCLi3L3ITBckTP9eCZopb
+	KxHly66trukLp1bYgM0gTEXXWo0GXReUJlArro4vAoN1KqBTbazoSVBRcbatX49xF5snI6JZFPZ
+	HV25VlI=
+X-Received: by 2002:a05:6402:27ca:b0:658:b9e9:5769 with SMTP id
+ 4fb4d7f45d1cf-65fa47adfcamr1949442a12.20.1772092863378; Thu, 26 Feb 2026
+ 00:01:03 -0800 (PST)
+MIME-Version: 1.0
+From: Zia Afzal <zia@pucit.edu.pk>
+Date: Thu, 26 Feb 2026 13:00:40 +0500
+X-Gm-Features: AaiRm53RwVmvY2ylz1AwXIBAf1hrElhbQbZemZm8G-Z5GWk-1wtX2ALkSraefP8
+Message-ID: <CAMc5gtYmW2O+4tC5Gimj3tU6kAmyOATc2msXvtJM8TV7fWbcaw@mail.gmail.com>
+Subject: =?UTF-8?Q?Assignment_2_=E2=80=93_Linear_Algebra?=
+To: bssef23ma@pucit.edu.pk, bssef23aa@pucit.edu.pk, bssef24ma@pucit.edu.pk, 
+	bssef24aa@pucit.edu.pk
+Content-Type: multipart/alternative; boundary="000000000000a18733064bb58586"
+X-Original-Sender: zia@pucit.edu.pk
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@pucit-edu-pk.20230601.gappssmtp.com header.s=20230601
+ header.b=NhqkMAvo;       arc=pass (i=1);       spf=pass (google.com: domain
+ of zia@pucit.edu.pk designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=zia@pucit.edu.pk;       dara=neutral header.i=@pucit.edu.pk
+Precedence: list
+Mailing-list: list bssef23ma@pucit.edu.pk; contact bssef23ma+owners@pucit.edu.pk
+List-ID: <bssef23ma.pucit.edu.pk>
+X-Google-Group-Id: 352477195733
+List-Post: <https://groups.google.com/a/pucit.edu.pk/group/bssef23ma/post>, <mailto:bssef23ma@pucit.edu.pk>
+List-Help: <https://support.google.com/a/pucit.edu.pk/bin/topic.py?topic=25838>,
+ <mailto:bssef23ma+help@pucit.edu.pk>
+List-Archive: <https://groups.google.com/a/pucit.edu.pk/group/bssef23ma/>
+List-Unsubscribe: <mailto:googlegroups-manage+352477195733+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/pucit.edu.pk/group/bssef23ma/subscribe>
+
+--000000000000a18733064bb58586
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Students,
+
+This email is to inform you about *Assignment # 2* for the course *Linear
+Algebra*. Please read the questions carefully and complete all parts as
+assigned.
+------------------------------
+*Exercise Set 1.5*
+
+   -
+
+   Q12 (b)
+   -
+
+   Q15
+   -
+
+   Q26
+   -
+
+   Q28
+
+------------------------------
+*Exercise Set 1.6*
+
+   -
+
+   Q4
+   -
+
+   Q12
+   -
+
+   Q17
+
+------------------------------
+*Exercise Set 1.7*
+
+   -
+
+   Q6
+   -
+
+   Q10
+   -
+
+   Q16 (a)
+   -
+
+   Q22
+   -
+
+   Q24
+   -
+
+   Q28
+   -
+
+   Q32
+
+------------------------------
+*Exercise Set 1.8*
+
+   -
+
+   Q4 (b)
+   -
+
+   Q6 (b)
+   -
+
+   Q12 (b)
+   -
+
+   Q13 (d)
+   -
+
+   Q16
+   -
+
+   Q22
+   -
+
+   Q24
+   -
+
+   Q31
+   -
+
+   Q35
+   -
+
+   Q37 (c)
+   -
+
+   Q41
+   -
+
+   Q45
+   -
+
+   Q48 (b)
+
+------------------------------
+*Exercise Set 1.9*
+
+   -
+
+   Example 3 (Page 93)
+   -
+
+   Example 7 (Page 95)
+   -
+
+   Q4
+   -
+
+   Q8
+   -
+
+   Q10 (c)
+   -
+
+   Q15
+   -
+
+   Q18 (a)
+   -
+
+   Q19 (a)
+   -
+
+   Q24 (a)
+
+------------------------------
+*Deadline*
+
+The submission deadline is:
+
+*Wednesday, 4 March 2026*
+
+All assignments must reach my office *no later than Friday, 6 March 2026*.
+No assignment will be entertained after *6 March 2026*.
+------------------------------
+
+Please note that *Quiz # 2* will be conducted the following week and will
+be based on the above-mentioned exercises.
+
+Make sure your solutions are complete, properly written, and clearly
+presented.
+
+Best regards,
+Muhammad Zia Afzal
+Assistant Professor
+Department of Software Engineering
+University of the Punjab, Lahore
+Mobile: +92 (0)300 4581772
+email: zia@pucit.edu.pk
+
+--=20
+
+
+Go Green!
+
+Print this email only if genuinely
+required.
+
+***********=20
+DISCLAIMER ***********
+
+
+
+
+
+
+
+
+
+This email including any attachment(s)=20
+contains information
+that is=C2=A0privileged, private and confidential and is=20
+intended for the=C2=A0addressee(s)
+only. If you receive this email in error,=20
+please notify the=C2=A0sender by
+reply email and delete it from your system.=20
+Unauthorized use,=C2=A0disclosure,
+distribution, printing, forwarding or copying=20
+is strictly prohibited. Any views
+or opinions presented in this email are=20
+solely those of the author and do not
+necessarily represent the FCIT.=20
+Although the management has taken reasonable
+precautions to ensure no=20
+viruses are present in this email, the FCIT cannot
+accept responsibility=20
+for any loss or damage arising from the use of this email
+or attachment(s).
+
+--000000000000a18733064bb58586
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><p class=3D"gmail-isSelectedEnd">Dear Students,</p><p=
+ class=3D"gmail-isSelectedEnd">This email is to inform you about <strong>As=
+signment # 2</strong> for the course <strong>Linear Algebra</strong>. Pleas=
+e read the questions carefully and complete all parts as assigned.</p><div>=
+<hr></div><h3><strong>Exercise Set 1.5</strong></h3><ul><li><p class=3D"gma=
+il-isSelectedEnd">Q12 (b)</p></li><li><p class=3D"gmail-isSelectedEnd">Q15<=
+/p></li><li><p class=3D"gmail-isSelectedEnd">Q26</p></li><li><p class=3D"gm=
+ail-isSelectedEnd">Q28</p></li></ul><div><hr></div><h3><strong>Exercise Set=
+ 1.6</strong></h3><ul><li><p class=3D"gmail-isSelectedEnd">Q4</p></li><li><=
+p class=3D"gmail-isSelectedEnd">Q12</p></li><li><p class=3D"gmail-isSelecte=
+dEnd">Q17</p></li></ul><div><hr></div><h3><strong>Exercise Set 1.7</strong>=
+</h3><ul><li><p class=3D"gmail-isSelectedEnd">Q6</p></li><li><p class=3D"gm=
+ail-isSelectedEnd">Q10</p></li><li><p class=3D"gmail-isSelectedEnd">Q16 (a)=
+</p></li><li><p class=3D"gmail-isSelectedEnd">Q22</p></li><li><p class=3D"g=
+mail-isSelectedEnd">Q24</p></li><li><p class=3D"gmail-isSelectedEnd">Q28</p=
+></li><li><p class=3D"gmail-isSelectedEnd">Q32</p></li></ul><div><hr></div>=
+<h3><strong>Exercise Set 1.8</strong></h3><ul><li><p class=3D"gmail-isSelec=
+tedEnd">Q4 (b)</p></li><li><p class=3D"gmail-isSelectedEnd">Q6 (b)</p></li>=
+<li><p class=3D"gmail-isSelectedEnd">Q12 (b)</p></li><li><p class=3D"gmail-=
+isSelectedEnd">Q13 (d)</p></li><li><p class=3D"gmail-isSelectedEnd">Q16</p>=
+</li><li><p class=3D"gmail-isSelectedEnd">Q22</p></li><li><p class=3D"gmail=
+-isSelectedEnd">Q24</p></li><li><p class=3D"gmail-isSelectedEnd">Q31</p></l=
+i><li><p class=3D"gmail-isSelectedEnd">Q35</p></li><li><p class=3D"gmail-is=
+SelectedEnd">Q37 (c)</p></li><li><p class=3D"gmail-isSelectedEnd">Q41</p></=
+li><li><p class=3D"gmail-isSelectedEnd">Q45</p></li><li><p class=3D"gmail-i=
+sSelectedEnd">Q48 (b)</p></li></ul><div><hr></div><h3><strong>Exercise Set =
+1.9</strong></h3><ul><li><p class=3D"gmail-isSelectedEnd">Example 3 (Page 9=
+3)</p></li><li><p class=3D"gmail-isSelectedEnd">Example 7 (Page 95)</p></li=
+><li><p class=3D"gmail-isSelectedEnd">Q4</p></li><li><p class=3D"gmail-isSe=
+lectedEnd">Q8</p></li><li><p class=3D"gmail-isSelectedEnd">Q10 (c)</p></li>=
+<li><p class=3D"gmail-isSelectedEnd">Q15</p></li><li><p class=3D"gmail-isSe=
+lectedEnd">Q18 (a)</p></li><li><p class=3D"gmail-isSelectedEnd">Q19 (a)</p>=
+</li><li><p class=3D"gmail-isSelectedEnd">Q24 (a)</p></li></ul><div><hr></d=
+iv><h3><strong>Deadline</strong></h3><p class=3D"gmail-isSelectedEnd">The s=
+ubmission deadline is:</p><p class=3D"gmail-isSelectedEnd"><strong>Wednesda=
+y, 4 March 2026</strong></p><p class=3D"gmail-isSelectedEnd">All assignment=
+s must reach my office <strong>no later than Friday, 6 March 2026</strong>.=
+<br>No assignment will be entertained after <strong>6 March 2026</strong>.<=
+/p><div><hr></div><p class=3D"gmail-isSelectedEnd">Please note that <strong=
+>Quiz # 2</strong> will be conducted the following week and will be based o=
+n the above-mentioned exercises.</p><p>Make sure your solutions are complet=
+e, properly written, and clearly presented.<br><br></p></div><div><div dir=
+=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div =
+dir=3D"ltr">Best regards,<br>Muhammad Zia Afzal<br>Assistant Professor<br>D=
+epartment of Software Engineering<br>University of the Punjab, Lahore<br>Mo=
+bile: +92 (0)300 4581772<br>email: <a href=3D"mailto:zia@pucit.edu.pk" targ=
+et=3D"_blank">zia@pucit.edu.pk</a></div></div></div></div>
+
+<br>
+<p style=3D"text-align:justify"><font color=3D"#008000" size=3D"2">Go Green=
+!</font></p><p style=3D"text-align:justify"><font color=3D"#008000" size=3D=
+"2">Print this email only if genuinely
+required.</font></p><p style=3D"text-align:justify"><b><font size=3D"2">***=
+******* DISCLAIMER **********</font></b></p><p style=3D"text-align:justify"=
+>
+
+
+
+
+
+</p><p style=3D"text-align:justify"><font size=3D"2">This email including a=
+ny attachment(s) contains information
+that is=C2=A0privileged, private and confidential and is intended for the=
+=C2=A0addressee(s)
+only. If you receive this email in error, please notify the=C2=A0sender by
+reply email and delete it from your system. Unauthorized use,=C2=A0disclosu=
+re,
+distribution, printing, forwarding or copying is strictly prohibited. Any v=
+iews
+or opinions presented in this email are solely those of the author and do n=
+ot
+necessarily represent the FCIT. Although the management has taken reasonabl=
+e
+precautions to ensure no viruses are present in this email, the FCIT cannot
+accept responsibility for any loss or damage arising from the use of this e=
+mail
+or attachment(s).</font></p>
+--000000000000a18733064bb58586--
